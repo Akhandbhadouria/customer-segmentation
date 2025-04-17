@@ -31,7 +31,6 @@ plt.xlabel('PCA Component 1')
 plt.ylabel('PCA Component 2')
 plt.colorbar(label='Segment')
 plt.show()
-#1st objective
 if 'Response' in df.columns:
     X = df.drop(columns=['Response'])
     y = df['Response']
@@ -49,7 +48,6 @@ if 'Response' in df.columns:
     plt.xlabel('Predicted')
     plt.ylabel('Actual')
     plt.show()
-#2nd objective
 if 'CLV' in df.columns:
     X = df.drop(columns=['CLV'])
     y = df['CLV']
@@ -69,7 +67,6 @@ if 'CLV' in df.columns:
     plt.ylabel("Predicted CLV")
     plt.show()
 
-#3rd objective
 if 'Churn' in df.columns:
     X = df.drop(columns=['Churn'])
     y = df['Churn']
@@ -93,7 +90,6 @@ if 'Churn' in df.columns:
     plt.legend(loc="lower right")
     plt.show()
 
-#4th objective
 if 'CustomerID' in df.columns and 'ProductID' in df.columns and 'Rating' in df.columns:
     pivot_table = df.pivot_table(index='CustomerID', columns='ProductID', values='Rating')
     similarity = pivot_table.corr(method='pearson')
